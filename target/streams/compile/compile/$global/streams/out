@@ -1,0 +1,16 @@
+[warn] C:\Users\Maoshun\Desktop\mydemo\app\views\edit.scala.html:5:18: method requestHeader in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27
+[warn]     @helper.CSRF.formField
+[warn]                  ^
+[warn] C:\Users\Maoshun\Desktop\mydemo\app\views\edit.scala.html:7:22: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27
+[warn]     @helper.inputText(form("firstName"))
+[warn]                      ^
+[warn] C:\Users\Maoshun\Desktop\mydemo\app\views\edit.scala.html:8:22: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27
+[warn]     @helper.inputText(form("lastName"))
+[warn]                      ^
+[warn] C:\Users\Maoshun\Desktop\mydemo\app\views\edit.scala.html:9:22: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27
+[warn]     @helper.inputText(form("phone"))
+[warn]                      ^
+[warn] C:\Users\Maoshun\Desktop\mydemo\app\views\edit.scala.html:10:22: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27
+[warn]     @helper.inputText(form("password"))
+[warn]                      ^
+[warn] 5 warnings found

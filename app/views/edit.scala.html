@@ -1,0 +1,13 @@
+@import play.mvc.Http.Request
+@(phone: String, form: Form[UserData])
+
+@helper.form(routes.UserController.done(phone)) {
+    @helper.CSRF.formField
+
+    @helper.inputText(form("firstName"))
+    @helper.inputText(form("lastName"))
+    @helper.inputText(form("phone"))
+    @helper.inputText(form("password"))
+
+    <button type="submit">Done</button>
+}

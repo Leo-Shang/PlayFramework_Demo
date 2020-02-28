@@ -1,0 +1,48 @@
+@import play.mvc.Http.Request
+@(users: Seq[User], form: Form[UserData])(implicit request: Request, messages: play.i18n.Messages)
+
+@main("Users") {
+
+    <h1>Users</h1>
+
+    @* Flash shows updates to a page *@
+    @request.flash.asScala().data.map { case (name, value) =>
+    <div class="@name">@value</div>
+    }
+
+    <table>
+        <thead>
+        <tr><th>  First Name  |  </th><th>  last Name  |  </th><th>  Phone Number  </th>
+        </thead>
+        <tbody>
+        @for(w <- users) {
+            <tr><td>@w.firstName</td><td>@w.lastName</td><td>@w.phone</td>
+                <td><a href="@routes.UserController.edit(w.phone)">Edit</a></td >
+                <td><a href="@routes.UserController.deleteUser(w.phone)">Delete</a></td></tr>
+        }
+        </tbody>
+    </table>
+
+    <hr/>
+
+    @* Global errors are not tied to any particular form field *@
+    @if(form.hasGlobalErrors) {
+        @form.globalErrors.asScala.map { error: play.data.validation.ValidationError =>
+            <div>
+                @error.key: @error.message
+            </div>
+        }
+    }
+
+    @helper.form(routes.UserController.createUser) {
+        @helper.CSRF.formField
+
+        @helper.inputText(form("firstName"))
+        @helper.inputText(form("lastName"))
+        @helper.inputText(form("phone"))
+        @helper.inputText(form("password"))
+
+        <button type="submit">Create New User</button>
+    }
+
+}
